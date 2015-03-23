@@ -3,7 +3,7 @@ Example of use of gopherjs + websocket + jsonrpc
 
 ## Preparation
 * Have Go 1.4 or better ([`gopherjs`](https://github.com/gopherjs/gopherjs) requirement)
-* `go get -u -v github.com/gopherjs/gopherjs` [[`godoc`](https://godoc.org/github.com/gopherjs/gopherjs)]
+* `go get -u -v github.com/gopherjs/gopherjs` [[`godoc`](https://godoc.org/github.com/gopherjs/gopherjs/js)]
 * `go get -u -v github.com/gopherjs/websocket` [[`godoc`](https://godoc.org/github.com/gopherjs/websocket)]
 * `go get -u -v github.com/gopherjs/jquery` [[`godoc`](https://godoc.org/github.com/gopherjs/jquery)]
 * `go get -u -v honnef.co/go/js/dom` [[`godoc`](https://godoc.org/honnef.co/go/js/dom)]
