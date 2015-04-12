@@ -17,10 +17,10 @@ Example of use of gopherjs + websocket + jsonrpc
 * `go run server.go` to run the server-side
 * Go to [`http://localhost:5454/`](http://localhost:5454/) in your browser
 
-If you got log messages in the bottom part of the resulting test page, it's working.  The `Output` line is
-what the JavaScript client is sending to the Go server.  The `Input` line is what the Go server sends to the
-client in response.  The only thing that differs in each message is the timestamp.  The server spits out the
-same info to the console on its end as well.
+If you got log messages in the browser dev console, it's working.  The `Output` line is what the JavaScript
+client is sending to the Go server.  The `Input` line is what the Go server sends to the client in response.
+The only thing that differs in each message is the timestamp.  The server spits out the same info to the
+console on its end as well.
 
 ## Notes
 
