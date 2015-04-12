@@ -5,7 +5,6 @@ Example of use of gopherjs + websocket + jsonrpc
 * Have Go 1.4 or better ([`gopherjs`](https://github.com/gopherjs/gopherjs) requirement)
 * `go get -u -v github.com/gopherjs/gopherjs` [[`godoc`](https://godoc.org/github.com/gopherjs/gopherjs/js)]
 * `go get -u -v github.com/gopherjs/websocket` [[`godoc`](https://godoc.org/github.com/gopherjs/websocket)]
-* `go get -u -v github.com/gopherjs/jquery` [[`godoc`](https://godoc.org/github.com/gopherjs/jquery)]
 * `go get -u -v honnef.co/go/js/dom` [[`godoc`](https://godoc.org/honnef.co/go/js/dom)]
 
 ## Get the code and run!
@@ -13,7 +12,7 @@ Example of use of gopherjs + websocket + jsonrpc
 * `git clone https://github.com/dustywilson/gopherjs-rpc.git`
 * `cd gopherjs-rpc`
 * `cd www` to enter the `www` directory where the `client.go` file is waiting for you to build
-* `gopherjs build -o client.js` to build the `client.go` file into `client.js`
+* `gopherjs build -m -o client.js` to build the `client.go` file into `client.js`
 * `cd ..` to return to parent
 * `go run server.go` to run the server-side
 * Go to [`http://localhost:5454/`](http://localhost:5454/) in your browser
@@ -25,14 +24,12 @@ same info to the console on its end as well.
 
 ## Notes
 
-Notice that both the backend and frontend share the file in the `common` directory.  In this case, they use
+Notice that both the backend and frontend share the file in the `shared` directory.  In this case, they use
 that to share the `ChatMessage` struct.  For the most part, you can share code between frontend and backend.
-
-Notice that I'm using a channel on the frontend to handle log messages.  I just wanted to prove that channels
-work as expected.
 
 You *CAN'T* use the core websocket lib with `gopherjs`.  If you start getting errors saying something like
 `gopherjs doesn't support network` then you've used the wrong package.
 
-This is `jsonrpc` on top of `websocket`.  I didn't test it, but I fully expect that the frontend could host
-RPC services for the server to call.
+This is `jsonrpc` on top of `websocket`.  In this case, the web browser is hosting RPC for the server to
+call.  For as long as the client is connected to the server, the server is able to call on any of its RPC
+functions.  Totally backwards, but really cool that it's possible.
