@@ -30,6 +30,6 @@ that to share the `ChatMessage` struct.  For the most part, you can share code b
 You *CAN'T* use the core websocket lib with `gopherjs`.  If you start getting errors saying something like
 `gopherjs doesn't support network` then you've used the wrong package.
 
-This is `jsonrpc` on top of `websocket`.  In this case, the web browser is hosting RPC for the server to
-call.  For as long as the client is connected to the server, the server is able to call on any of its RPC
+This is `rpc` on top of `websocket`.  In this case, the web browser is hosting RPC for the server to call.
+For as long as the client is connected to the server, the server is able to call on any of its RPC
 functions.  Totally backwards, but really cool that it's possible.
